@@ -13,6 +13,10 @@ print backslash_cat
 print fat_cat
 
 print "formfeed\ftest"
+print "this\vis\va\vvertical\vtab"
+print "this\tis\ta\thorizontal\ttab"
+print "hex value 0x31 = '\x31'"
+
 
 while True:
 	for i in ["/", "-", "|", "\\", "|"]:
