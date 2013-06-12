@@ -7,6 +7,7 @@ weight = raw_input()
 
 print "So, you're %r old, %r tall, and %r heavy." % (age, height, weight)
 
-s = raw_input('--> ')
-print s
+# Prompt for a number (without int() it will print x multiple times)
+x = int(raw_input('--> '))
+print "x * 10 = %s" % (x * 10)
 
