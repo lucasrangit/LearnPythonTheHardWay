@@ -9,3 +9,4 @@ Resources
 =========
 
 * http://tinwhiskers.net/
+* http://www.codecademy.com/tracks/python
