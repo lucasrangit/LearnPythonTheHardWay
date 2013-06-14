@@ -13,7 +13,8 @@ txt = open(filename)
 print "Here's your file %r:" % filename
 print txt.read()
 
-close(txt)
+# it's important to close files
+txt.close()
 
 # get a new file handle 
 print "Type the filename again:"
@@ -23,4 +24,5 @@ txt_again = open(file_again)
 # print its contents with formatting and special characters
 print txt_again.read()
 
-close(txt_again)
+# it's important to close files
+txt_again.close()
