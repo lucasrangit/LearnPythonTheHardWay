@@ -13,10 +13,10 @@ txt = open(filename)
 print "Here's your file %r:" % filename
 print txt.read()
 
-# get a new file handle and print its contents
+# get a new file handle 
 print "Type the filename again:"
 file_again = raw_input('> ')
 
 txt_again = open(file_again)
-
+# print its contents with formatting and special characters
 print txt_again.read()
