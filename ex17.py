@@ -5,18 +5,14 @@ from os.path import exists
 
 script, from_file, to_file = argv
 
-#print "Copying from %s to %s" % (from_file, to_file)
+# this entire script in one line: (python will close the file for one-line like this)
+open(to_file, 'w').write(open(from_file).read())
 
+# long form:
 in_file = open(from_file)
 indata = in_file.read()
-# This could be donein one line as follows but then we can't close the file
-#indata = open(from_file).read()==
-
-#print "The input file is %d bytes long" % len(indata)
-
-#print "Does the output file exist? %r" % exists(to_file)
-#print "Ready, hit RETURN to continue, CTRL-C to abort.",
-#raw_input()
+# This could be donein one line as follows
+#indata = open(from_file).read()
 
 if exists(to_file):
 	print "Target file %s exists." % (to_file)
@@ -26,7 +22,6 @@ if exists(to_file):
 out_file = open(to_file, 'w')
 out_file.write(indata)
 
-#print "Alright, all done."
 print "Copied %d bytes from %s to %s." % (len(indata), from_file, to_file)
 
 out_file.close()
