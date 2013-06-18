@@ -30,5 +30,5 @@ def jello_shots(cup_count, bottle_count, alcohol):
 	print "You can make %d %s jello shots." % (bottle_count * 10 / cup_count, alcohol)
 
 
-jello_shots(20, 10, "Rum")
+jello_shots(int(raw_input('Cups: ')), int(raw_input('Bottles: ')), raw_input("Alcohol: "))
 
