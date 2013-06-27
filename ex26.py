@@ -10,12 +10,12 @@ def sort_words(words):
 def print_first_word(words):
     """Prints the first word after popping it off."""
     word = words.pop(0)
-    print words
+    print word
 
 def print_last_word(words):
     """Prints the last word after popping it off."""
     word = words.pop(-1)
-    print words
+    print word
 
 def sort_sentence(sentence):
     """Takes in a full sentence and returns the sorted words."""
@@ -52,7 +52,7 @@ print "--------------"
 print poem
 print "--------------"
 
-five = 10 - 2 + 3 - 5
+five = 10 - 2 + 3 - 5 - 1
 print "This should be five: %s" % five
 
 def secret_formula(started):
