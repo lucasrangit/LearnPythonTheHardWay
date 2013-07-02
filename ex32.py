@@ -18,15 +18,21 @@ for i in change:
 	print "I got %r" % i
 
 # we canalso build lists, first start with an empty one
-elements = []
+# can also use [] to make an empty list
+elements = list()
 
 # thenuse the range function to do 0 to 5 counts
 for i in range(0, 6):
 	print "Adding %d to the list." % i
-	# append is a function that lists understand
-	elements.append(i)
+	## append is a function that lists understand
+	#elements.append(i)
+	# insert(index, object) will insert at the head (index = 0) of the list
+	elements.insert(0, i)
+# reverse() will restore the behavior of append()
+elements.reverse()
 
 # for now we can print them out too
 for i in elements:
 	print "Element was: %d" % i
+
 
