@@ -35,4 +35,8 @@ elements.reverse()
 for i in elements:
 	print "Element was: %d" % i
 
-
+# this is a 2-dimensional list
+elements2 = [[1,2,3],[4,5,6]]
+for i in range(len(elements2)):
+	for j in range(len(elements2[i])):
+		print "Element[%d][%d] was: %d" % (i, j, elements2[i][j])
