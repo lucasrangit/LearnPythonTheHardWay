@@ -7,7 +7,8 @@ def gold_room():
 	
 	next = raw_input('> ')
 	
-	if "0" in next or "1" in next:
+	# isdigit works for non-negative numbers only
+	if next.isdigit():
 		how_much = int(next)
 	else:
 		dead("Man, learn to type a number.")
