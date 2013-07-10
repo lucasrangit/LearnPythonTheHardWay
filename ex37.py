@@ -22,12 +22,29 @@ else:
 
 # from
 # import _from_ a module
+from sys import argv
 
 # not
 # boolean operator to negate
+print "True is %r" % True
+print "not(True) is %r" % (not(True))
+print "False is %r" % False
+print "not(False) is %r" % (not(False))
 
 # while
 # a loop that evaluates the statements within if the statement is True
+while_loop = True
+while_loop_count = 0
+print "Will loop 10 times until loop count is 10 or user says cancel."
+while while_loop:
+	if while_loop_count < 10:
+		while_loop_prompt = "Loop #%d Contunue? [Y/n] " % (while_loop_count + 1)
+		while_loop_input = raw_input(while_loop_prompt)
+		if while_loop_input == 'n':
+			while_loop = False
+	else:
+		while_loop = False
+	while_loop_count += 1
 
 # as 
 # ? defines a different logical name of an imported module
