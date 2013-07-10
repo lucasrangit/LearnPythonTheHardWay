@@ -2,9 +2,23 @@
 
 # and
 # a boolean operator that evaluates to True is both LHS and RHS are True
+print "True and True == True? %r" % (True and True)
+print "True and False == False? %r" % (True and False)
 
 # del
-# 
+# deletes a variable from the namespace
+name = "exists"
+print "before del"
+if 'name' in locals():
+	print "name exists"
+else:
+	print "name does not exist"
+del name
+print "after del"
+if 'name' in locals():
+	print "name exists"
+else:
+	print "name does not exist"
 
 # from
 # import _from_ a module
