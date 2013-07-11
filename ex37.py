@@ -1,4 +1,6 @@
 # Keywords Review #2
+#
+# Most explanations came form PyDoc but some came from http://zetcode.com/lang/python/keywords/ as well.
 
 # and
 # a boolean operator that evaluates to True is both LHS and RHS are True
@@ -46,20 +48,46 @@ while while_loop:
 		while_loop = False
 	while_loop_count += 1
 
+if while_loop_count == 1:
+	print "Looped 1 time."
+else:
+	print "Looped %d times." % while_loop_count 
+
 # as 
-# ? defines a different logical name of an imported module
+# defines an alias for an imported module
+import random as rnd
+print "rnd.randint(1, 10) = %r" % rnd.randint(1,10)
 
 # elif
 # multiple if-statement
 
 # global
-# ? a directive to the parser
+# required in order to modify variables outside of a function
+x = 10
+def test_no_global():
+#	global x
+	x = 0
+	print "inside: x = %r" % x
+print "Without \"global\""
+test_no_global()
+def test_global():
+	global x
+	x = 0
+	print "inside: x = %r" % x
+print "outside: x = %r" % x
+print "With \"global\""
+test_global()
+print "outside: x = %r" % x
 
 # or
 # boolean operator that evaluates to true if either LHS or RHS is True
+print "True or False = %r" % (True or False)
 
 # with
-# ? 
+# http://docs.python.org/whatsnew/2.6.html#pep-343-the-with-statement
+# groups commands that normally execute together and have a cleanup section
+# with open('output.txt', 'w') as f:
+#     f.write('Hi there!')
 
 # assert
 # ? a convenient way to insert debug assertions
