@@ -7,8 +7,8 @@
 print "True and True == True? %r" % (True and True)
 print "True and False == False? %r" % (True and False)
 
-# del
-# deletes a variable from the namespace
+# print - output a string to stdout
+# del   - deletes a variable from the namespace
 name = "exists"
 print "before del"
 if 'name' in locals():
@@ -53,16 +53,16 @@ if while_loop_count == 1:
 else:
 	print "Looped %d times." % while_loop_count 
 
-# as 
-# defines an alias for an imported module
+# import - find a module and import the symbols
+# as 	 - defines an alias for an imported module
 import random as rnd
 print "rnd.randint(1, 10) = %r" % rnd.randint(1,10)
 
 # elif
 # multiple if-statement
 
-# global
-# required in order to modify variables outside of a function
+# def    - define a function
+# global - required in order to modify variables outside of a function
 x = 10
 def test_no_global():
 #	global x
@@ -110,12 +110,6 @@ print "True or False = %r" % (True or False)
 # except
 # ?
 
-# import
-# find a module and import the symbols
-
-# print
-# print a string to stdout
-
 # class
 # a definition of a logical grouping of variables and functions
 
@@ -139,12 +133,15 @@ print "True or False = %r" % (True or False)
 
 # return
 # return execution to the calling function and optionally return an object from the callee
-
-# def
-# define a function
+def test_return():
+	return 10
+print "the function returned: %r" % test_return()
 
 # for
 # loop a specified number of times
+print "loop 6 times: ",
+for i in range(0,6):
+	print "%d, " % i,
 
 # lambda
 # ?
@@ -154,8 +151,7 @@ print "True or False = %r" % (True or False)
 
 ## Data Types
 
-# True
-# False
+# True, False
 # boolean
 
 # None
@@ -169,6 +165,7 @@ print "True or False = %r" % (True or False)
 
 # floats
 # 1.0, 1.1, ... 
+
 # lists
 
 ## String Escape Sequences
