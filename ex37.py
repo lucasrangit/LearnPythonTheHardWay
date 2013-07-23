@@ -96,13 +96,40 @@ print "True or False = %r" % (True or False)
 # ? a convenient way to insert debug assertions
 
 # pass
-# ?
+# http://docs.python.org/2/tutorial/controlflow.html#pass-statements
+# the pass statement does nothing, it can be used when a statement is required
+# syntactically but the program requires no action.
+def busy_wait():
+	pass # busy-wait loop
 
+print '== yield =='
 # yield
-# ?
+# http://stackoverflow.com/questions/231767/the-python-yield-keyword-explained
+# like return but function will return a generator
+genenable = True
+def gen():
+	print 'Observe that this is not printed when first called'
+	if genenable:
+		yield 1
+		yield 2
+		yield 3
+	else:
+		yield 0
+mygen = gen();
+raw_input('Print 3 times:')
+for i in mygen:
+	print(i)
+raw_input('Print 3 more times disable after the 2nd:')
+for i in mygen:
+	print(i)
+genenable = False
+mygen = gen()
+for i in mygen:
+	print(i)
 
-# break
+print '== break =='
 # break out of a loop
+
 for break_i in range(0,6):
 	print "%i, " % break_i,
 	if break_i == 3:
