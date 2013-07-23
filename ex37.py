@@ -9,6 +9,8 @@ print "True and False == False? %r" % (True and False)
 
 # print - output a string to stdout
 # del   - deletes a variable from the namespace
+# if	- a conditional test that executes the statements within if True
+# else	- the catch all statement for an if-statement
 name = "exists"
 print "before del"
 if 'name' in locals():
@@ -33,8 +35,8 @@ print "not(True) is %r" % (not(True))
 print "False is %r" % False
 print "not(False) is %r" % (not(False))
 
-# while
-# a loop that evaluates the statements within if the statement is True
+# elif	- multiple if-statement
+# while - a loop that evaluates the statements within if the statement is True
 while_loop = True
 while_loop_count = 0
 print "Will loop 10 times until loop count is 10 or user says cancel."
@@ -50,6 +52,8 @@ while while_loop:
 
 if while_loop_count == 1:
 	print "Looped 1 time."
+elif while_loop_count == 2:
+	print "Looped 2 times."
 else:
 	print "Looped %d times." % while_loop_count 
 
@@ -57,9 +61,6 @@ else:
 # as 	 - defines an alias for an imported module
 import random as rnd
 print "rnd.randint(1, 10) = %r" % rnd.randint(1,10)
-
-# elif
-# multiple if-statement
 
 # def    - define a function
 # global - required in order to modify variables outside of a function
@@ -86,17 +87,13 @@ print "True or False = %r" % (True or False)
 # with
 # http://docs.python.org/whatsnew/2.6.html#pep-343-the-with-statement
 # groups commands that normally execute together and have a cleanup section
+# the following will always call close() on f because it is defined
+# as the __exit__() method for this object.
 # with open('output.txt', 'w') as f:
 #     f.write('Hi there!')
 
 # assert
 # ? a convenient way to insert debug assertions
-
-# else
-# the catch all statement for an if-statement
-
-# if
-# a conditional test that executes the statements within if True
 
 # pass
 # ?
@@ -105,7 +102,12 @@ print "True or False = %r" % (True or False)
 # ?
 
 # break
-# ?
+# break out of a loop
+for break_i in range(0,6):
+	print "%i, " % break_i,
+	if break_i == 3:
+		print "break!"
+		break;
 
 # except
 # ?
