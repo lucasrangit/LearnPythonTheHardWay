@@ -138,29 +138,40 @@ for break_i in range(0,6):
 		break;
 
 # exec
-# ?
+# dynamically execute a string, open file object, a code object, or a tuple
+# it supports an optional scope parameter as well
+exec_string = "print 'exec string'"
+exec(exec_string)
 
 # class
 # a definition of a logical grouping of variables and functions
-
+class MyClass:
+	"""A simple example class"""
+	i = 12345
+	def f(self):
+		return self.i
+# instanciate
+myclass = MyClass()
+# call a method in MyClass
+print 'myclass.f() = %d' % myclass.f()
 
 print '== try/except =='
 # try		- defines a clause that has clean-up actions if an exception occurs
 # except	- clause to execute in the event of an exception
 # raise		- throw an exception
 # http://docs.python.org/2/tutorial/errors.html#handling-exceptions
+global x_try
 while True:
 	try:
-		x_try = int(raw_input('Enter an non-integer (2 to break): '))
-		raise
-	except ValueError:
-		print 'Oops! %r was not an integer. Try again...'
-	except:
-		if ( 2 == x_try ):
-			print 'Your 2 raised an exception!'
+		x_try = int(raw_input('Enter an non-integer (0 to break): '))
+		if ( 0 == x_try ):
 			break
 		else:
-			print 'Something else raised an exception! Try again...'
+			raise
+	except ValueError:
+		print 'Oops! That was not an integer. Try again...'
+	except:
+		print 'Something else raised an exception! Try again...'
 
 # in 
 # ?
