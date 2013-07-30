@@ -159,6 +159,7 @@ print '== try/except =='
 # try		- defines a clause that has clean-up actions if an exception occurs
 # except	- clause to execute in the event of an exception
 # raise		- throw an exception
+# finally	- a clause that is always executed after a try statment and before any unhandled exception
 # http://docs.python.org/2/tutorial/errors.html#handling-exceptions
 while True:
 	try:
@@ -171,6 +172,8 @@ while True:
 		print 'Oops! That was not an integer. Try again...'
 	except:
 		print 'Something else raised an exception! Try again...'
+	finally:
+		print 'executing finally clause'
 
 # continue	- end current iteration in a loop but don't break out
 for i in range(0,5):
@@ -178,11 +181,10 @@ for i in range(0,5):
 		continue
 	print i
 
-# finally
-# ?
-
-# is
-# ?
+# is	- compare object identify
+a = MyClass()
+b = a
+print 'a is b ? %r' % (a is b)
 
 # return
 # return execution to the calling function and optionally return an object from the callee
