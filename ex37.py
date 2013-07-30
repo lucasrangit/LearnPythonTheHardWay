@@ -172,10 +172,11 @@ while True:
 	except:
 		print 'Something else raised an exception! Try again...'
 
-# in	- operator to test for collectin membership
-
-# continue
-# ?
+# continue	- end current iteration in a loop but don't break out
+for i in range(0,5):
+	if ( 3 == i ):
+		continue
+	print i
 
 # finally
 # ?
