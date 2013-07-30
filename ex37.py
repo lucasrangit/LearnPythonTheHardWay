@@ -103,9 +103,9 @@ def busy_wait():
 	pass # busy-wait loop
 
 print '== yield =='
-# yield
+# yield	- like return but function will return a generator
 # http://stackoverflow.com/questions/231767/the-python-yield-keyword-explained
-# like return but function will return a generator
+# in	- operator to test for collectin membership
 genenable = True
 def gen():
 	print 'Observe that this is not printed when first called'
@@ -160,7 +160,6 @@ print '== try/except =='
 # except	- clause to execute in the event of an exception
 # raise		- throw an exception
 # http://docs.python.org/2/tutorial/errors.html#handling-exceptions
-global x_try
 while True:
 	try:
 		x_try = int(raw_input('Enter an non-integer (0 to break): '))
@@ -173,8 +172,7 @@ while True:
 	except:
 		print 'Something else raised an exception! Try again...'
 
-# in 
-# ?
+# in	- operator to test for collectin membership
 
 # continue
 # ?
