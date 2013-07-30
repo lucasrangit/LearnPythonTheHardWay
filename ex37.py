@@ -119,9 +119,10 @@ mygen = gen();
 raw_input('Print 3 times:')
 for i in mygen:
 	print(i)
-raw_input('Print 3 more times disable after the 2nd:')
+raw_input('Print 0 times now that it is empty:')
 for i in mygen:
 	print(i)
+raw_input('Print 1 time:')
 genenable = False
 mygen = gen()
 for i in mygen:
@@ -136,19 +137,32 @@ for break_i in range(0,6):
 		print "break!"
 		break;
 
-# except
+# exec
 # ?
 
 # class
 # a definition of a logical grouping of variables and functions
 
-# exec
-# ?
+
+print '== try/except =='
+# try		- defines a clause that has clean-up actions if an exception occurs
+# except	- clause to execute in the event of an exception
+# raise		- throw an exception
+# http://docs.python.org/2/tutorial/errors.html#handling-exceptions
+while True:
+	try:
+		x_try = int(raw_input('Enter an non-integer (2 to break): '))
+		raise
+	except ValueError:
+		print 'Oops! %r was not an integer. Try again...'
+	except:
+		if ( 2 == x_try ):
+			print 'Your 2 raised an exception!'
+			break
+		else:
+			print 'Something else raised an exception! Try again...'
 
 # in 
-# ?
-
-# raise
 # ?
 
 # continue
@@ -173,9 +187,6 @@ for i in range(0,6):
 	print "%d, " % i,
 
 # lambda
-# ?
-
-# try
 # ?
 
 ## Data Types
