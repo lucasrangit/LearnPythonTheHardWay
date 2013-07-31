@@ -203,22 +203,22 @@ print ""
 # lambda expressions formm anonymous functions
 mul2 = lambda a, b: a * b
 add2 = lambda a, b: a + b
-print "mul2(2, 3) = %d" % mul2(2, 3)
-print "add2(2, 3) = %d" % add2(2, 3)
+print "mul2(2, 3) =", mul2(2, 3)
+print "add2(2, 3) =", add2(2, 3)
 
 ## Data Types
 
 # True, False
 # boolean
-print "bool(True) = %r" % bool(True)
-print "bool(False) = %r" % bool(False)
-print "bool(\"text\") = %r" % bool("text")
-print "bool(\"\") = %r" % bool("")
-print "bool(' ') = %r" % bool(' ')
-print "bool(0) = %r" % bool(0)
-print "bool() = %r" % bool()
-print "bool(3) = %r" % bool(3)
-print "bool(None) = %r" % bool(None)
+print "bool(True) =", bool(True)
+print "bool(False) =", bool(False)
+print "bool(\"text\") =", bool("text")
+print "bool(\"\") =", bool("")
+print "bool(' ') =", bool(' ')
+print "bool(0) =", bool(0)
+print "bool() =", bool()
+print "bool(3) =", bool(3)
+print "bool(None) =", bool(None)
 
 # None
 # the null object (not known or empty)
@@ -228,12 +228,19 @@ print fNone()
 
 # strings
 # ASCII 
+ascii_string = "0123456789abcdefghijklmnop"
+print ascii_string
 
 # numbers
 # 1, 2, 3, 4, ...
+num_int = 2
+print "int", num_int
 
 # floats
 # 1.0, 1.1, ... 
+num_float = 1.1
+print "float", num_float
+print "int * float", num_float * num_int
 
 # lists
 
