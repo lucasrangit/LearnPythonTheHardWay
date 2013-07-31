@@ -210,6 +210,15 @@ print "add2(2, 3) = %d" % add2(2, 3)
 
 # True, False
 # boolean
+print "bool(True) = %r" % bool(True)
+print "bool(False) = %r" % bool(False)
+print "bool(\"text\") = %r" % bool("text")
+print "bool(\"\") = %r" % bool("")
+print "bool(' ') = %r" % bool(' ')
+print "bool(0) = %r" % bool(0)
+print "bool() = %r" % bool()
+print "bool(3) = %r" % bool(3)
+print "bool(None) = %r" % bool(None)
 
 # None
 # ? the null object
