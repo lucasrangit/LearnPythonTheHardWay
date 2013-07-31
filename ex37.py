@@ -221,7 +221,10 @@ print "bool(3) = %r" % bool(3)
 print "bool(None) = %r" % bool(None)
 
 # None
-# ? the null object
+# the null object (not known or empty)
+def fNone():
+	pass
+print fNone()
 
 # strings
 # ASCII 
