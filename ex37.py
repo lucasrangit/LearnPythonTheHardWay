@@ -197,9 +197,14 @@ print "the function returned: %r" % test_return()
 print "loop 6 times: ",
 for i in range(0,6):
 	print "%d, " % i,
+print ""
 
 # lambda
-# ?
+# lambda expressions formm anonymous functions
+mul2 = lambda a, b: a * b
+add2 = lambda a, b: a + b
+print "mul2(2, 3) = %d" % mul2(2, 3)
+print "add2(2, 3) = %d" % add2(2, 3)
 
 ## Data Types
 
