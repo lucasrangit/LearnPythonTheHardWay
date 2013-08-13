@@ -270,45 +270,45 @@ print "percent character: %%"
 
 # Arithmetic
 # +
-print "Addition" 1 + 2
+print "Addition %d" % (1 + 2)
 
 # -
-print "Subtraction" 3 - 2
+print "Subtraction %d" % (3 - 2)
 
 # *
-print "Multiplication" 2 * 3
+print "Multiplication %d" % (2 * 3)
 
 # **
-print "Exponent" 2**3
+print "Exponent %d" % (2**3)
 
 # /
-print "Division" 9 / 3
+print "Division %d" % (9 / 3)
 
 # //
-print "Floor Division" 9 // 2
+print "Floor Division %d" % (9 // 2)
 
 # %
-print "Modulus" 9 % 2
+print "Modulus %d" % (9 % 2)
 
 # Comparison
 # <
-print "Less than" 1 < 2
+print "Less than %r" % (1 < 2)
 
 # >
-print "Greater than" 1 > 2
+print "Greater than %r" % (1 > 2)
 
 # <=
-print "Less than or equal" 1 <= 2
+print "Less than or equal %r" % (1 <= 2)
 
 # >=
-print "Greater than or equal" 1 >= 2
+print "Greater than or equal %r" % (1 >= 2)
 
 # ==
-print "Equal to" 1 == 2
+print "Equal to %r" % (1 == 2)
 
 # !=
 # <>
-print "Not equal" 1 != 2
+print "Not equal %r" % (1 != 2)
 
 #
 
@@ -330,18 +330,34 @@ print "Not equal" 1 != 2
 
 # ;
 
+# Assignment Operators
+a = 10
+print "a = 10"
+
 # +=
+a += 1
+print "Add AND assign", a 
 
 # -=
+a -= 1
+print "Subtract AND assign", a
 
 # *=
+a *= 4
+print "Multiply AND assign", a
 
 # /=
+a /= 2
+print "Divide AND assign", a
 
 # //=
+a //= 4
+print "Floor divide AND assign", a
 
 # %=
+a %= 3
+print "Modulus AND assign", a
 
 # **=
-
-
+a **= 3
+print "Exponent AND assign", a
