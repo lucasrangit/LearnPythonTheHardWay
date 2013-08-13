@@ -268,33 +268,49 @@ print "percent character: %%"
 
 ## Operators
 
+# Arithmetic
 # +
+print "Addition" 1 + 2
 
 # -
+print "Subtraction" 3 - 2
 
 # *
+print "Multiplication" 2 * 3
 
 # **
+print "Exponent" 2**3
 
 # /
+print "Division" 9 / 3
 
 # //
+print "Floor Division" 9 // 2
 
 # %
+print "Modulus" 9 % 2
 
+# Comparison
 # <
+print "Less than" 1 < 2
 
 # >
+print "Greater than" 1 > 2
 
 # <=
+print "Less than or equal" 1 <= 2
 
 # >=
+print "Greater than or equal" 1 >= 2
 
 # ==
+print "Equal to" 1 == 2
 
 # !=
-
 # <>
+print "Not equal" 1 != 2
+
+#
 
 # ()
 
