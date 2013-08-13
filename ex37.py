@@ -269,6 +269,7 @@ print "percent character: %%"
 ## Operators
 
 # Arithmetic
+
 # +
 print "Addition %d" % (1 + 2)
 
@@ -291,6 +292,7 @@ print "Floor Division %d" % (9 // 2)
 print "Modulus %d" % (9 % 2)
 
 # Comparison
+
 # <
 print "Less than %r" % (1 < 2)
 
@@ -310,27 +312,50 @@ print "Equal to %r" % (1 == 2)
 # <>
 print "Not equal %r" % (1 != 2)
 
-#
+# Special Syntax
 
 # ()
+# function(arguments)
 
 # []
+# list[]
 
 # {}
+# dictionary {'key':'value'} pair
 
 # @
+# Decorator - used to modify a callable object definition
+# http://www.artima.com/weblogs/viewpost.jsp?thread=240808
+class myDecorator(object):
+	def __init__(self, f):
+		print "Inside myDecorator.__init__()"
+	
+	def __call__(self):
+		print "Inside myDecorator.__call__()"
+
+@myDecorator
+def some_function():
+	print "this is equivalent to some_function = myDecorator(some_function)"
+
+some_function()
 
 # ,
+# function(argument, delimiter)
 
 # :
+# sub-clause (loop) or slice notation [1:5] (1 to 4 inclusive)
 
 # .
+# decimal point
 
-# .
+# =
+# assignment
 
 # ;
+# separator; between; statements
 
 # Assignment Operators
+
 a = 10
 print "a = 10"
 
