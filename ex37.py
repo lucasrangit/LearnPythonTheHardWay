@@ -228,35 +228,43 @@ for i in range(0,6):
 # signed integer decimal
 
 # %o
-# signed octal value
+print "octal value: %o is decimal %d" % (0100, 0100)
 
 # %x
-# signed hexidecimal (lowercase)
+print "signed hex (lowercase): %x" % 0xFF
 
 # %X
-# signed hexidecimal (uppercase)
+print "signed hexidecimal (uppercase): %X" % 0xff
 
 # %e
-# floating point exponential (lowercase)
+print "floating point exponential (lowercase): %e" % 0.00000000012
 
 # %E
-# floating point exponential (uppercase) 
+print "floating point exponential (uppercase): %E" % 0.00000000012
 
 # %f
+print "floating point decimal: %f" % 123.45
 
 # %F
+print "floating point decimal: %F" % 123.45
 
 # %g
+print "floating point exponental if exponent < -4 or > precision, o.w. decimal (lowercase): %g" % 1.2e-4
 
 # %G
+print "floating point exponental if exponent < -4 or > precision, o.w. decimal (uppercase): %G" % 1.2e-5
 
 # %c
+print "single character: %c" % 'c'
 
 # %r
+print "string (converts using repr()): %r" % True
 
 # %s
+print "string (converts using str()): %s" % oct(011)
 
 # %%
+print "percent character: %%"
 
 ## Operators
 
