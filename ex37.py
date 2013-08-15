@@ -243,6 +243,12 @@ print "float", num_float
 print "int * float", num_float * num_int
 
 # lists
+list_ex = [ 1, 2, 3, 'four']
+print "list[ ",
+for list_i in list_ex:
+	print "%r " % list_i,
+print "]"
+
 
 ## String Escape Sequences
 
