@@ -258,96 +258,161 @@ print "]"
 # signed integer decimal
 
 # %o
-# signed octal value
+print "octal value: %o is decimal %d" % (0100, 0100)
 
 # %x
-# signed hexidecimal (lowercase)
+print "signed hex (lowercase): %x" % 0xFF
 
 # %X
-# signed hexidecimal (uppercase)
+print "signed hexidecimal (uppercase): %X" % 0xff
 
 # %e
-# floating point exponential (lowercase)
+print "floating point exponential (lowercase): %e" % 0.00000000012
 
 # %E
-# floating point exponential (uppercase) 
+print "floating point exponential (uppercase): %E" % 0.00000000012
 
 # %f
+print "floating point decimal: %f" % 123.45
 
 # %F
+print "floating point decimal: %F" % 123.45
 
 # %g
+print "floating point exponental if exponent < -4 or > precision, o.w. decimal (lowercase): %g" % 1.2e-4
 
 # %G
+print "floating point exponental if exponent < -4 or > precision, o.w. decimal (uppercase): %G" % 1.2e-5
 
 # %c
+print "single character: %c" % 'c'
 
 # %r
+print "string (converts using repr()): %r" % True
 
 # %s
+print "string (converts using str()): %s" % oct(011)
 
 # %%
+print "percent character: %%"
 
 ## Operators
 
+# Arithmetic
+
 # +
+print "Addition %d" % (1 + 2)
 
 # -
+print "Subtraction %d" % (3 - 2)
 
 # *
+print "Multiplication %d" % (2 * 3)
 
 # **
+print "Exponent %d" % (2**3)
 
 # /
+print "Division %d" % (9 / 3)
 
 # //
+print "Floor Division %d" % (9 // 2)
 
 # %
+print "Modulus %d" % (9 % 2)
+
+# Comparison
 
 # <
+print "Less than %r" % (1 < 2)
 
 # >
+print "Greater than %r" % (1 > 2)
 
 # <=
+print "Less than or equal %r" % (1 <= 2)
 
 # >=
+print "Greater than or equal %r" % (1 >= 2)
 
 # ==
+print "Equal to %r" % (1 == 2)
 
 # !=
-
 # <>
+print "Not equal %r" % (1 != 2)
+
+# Special Syntax
 
 # ()
+# function(arguments)
 
 # []
+# list[]
 
 # {}
+# dictionary {'key':'value'} pair
 
 # @
+# Decorator - used to modify a callable object definition
+# http://www.artima.com/weblogs/viewpost.jsp?thread=240808
+class myDecorator(object):
+	def __init__(self, f):
+		print "Inside myDecorator.__init__()"
+	
+	def __call__(self):
+		print "Inside myDecorator.__call__()"
+
+@myDecorator
+def some_function():
+	print "this is equivalent to some_function = myDecorator(some_function)"
+
+some_function()
 
 # ,
+# function(argument, delimiter)
 
 # :
+# sub-clause (loop) or slice notation [1:5] (1 to 4 inclusive)
 
 # .
+# decimal point
 
-# .
+# =
+# assignment
 
 # ;
+# separator; between; statements
+
+# Assignment Operators
+
+a = 10
+print "a = 10"
 
 # +=
+a += 1
+print "Add AND assign", a 
 
 # -=
+a -= 1
+print "Subtract AND assign", a
 
 # *=
+a *= 4
+print "Multiply AND assign", a
 
 # /=
+a /= 2
+print "Divide AND assign", a
 
 # //=
+a //= 4
+print "Floor divide AND assign", a
 
 # %=
+a %= 3
+print "Modulus AND assign", a
 
 # **=
-
-
+a **= 3
+print "Exponent AND assign", a
