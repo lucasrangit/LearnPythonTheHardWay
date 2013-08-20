@@ -36,3 +36,7 @@ print str.join(' ', stuff)
 
 print '#'.join(stuff[3:5]) # supper stellar!
 print str.join('#', stuff[3:5])
+
+# Print the symbols in the current namespace
+print dir()
+
