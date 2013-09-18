@@ -19,3 +19,9 @@ bulls_on_parade = Song(["They rally around the family,",
 happy_bday.sing_me_a_song()
 
 bulls_on_parade.sing_me_a_song()
+
+# pass a variable to constructor
+# note, using a list is required otherwise it will print one character per line
+new_lyrics = ["Break it,", "trash it,", "thrash it,", "you can't hurt it."]
+new_song = Song(new_lyrics)
+new_song.sing_me_a_song()
