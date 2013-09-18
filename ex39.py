@@ -76,5 +76,12 @@ print ' '.join(cities_list)
 
 # Cannot operate on a dict as if it were a list
 print cities_list
-# FIXME following returns None
-print cities_list.reverse()
+# FIXME why doesn't list.reverse() work?
+cities_list.append('NJ')
+print cities_list
+# The following will fail with the error
+#  Traceback (most recent call last):
+#    File "ex39.py", line 83, in <module>
+#      cities.append('NJ')
+#  AttributeError: 'dict' object has no attribute 'append'
+#cities.append('NJ')
