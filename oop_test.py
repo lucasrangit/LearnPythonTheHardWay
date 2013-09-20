@@ -33,6 +33,9 @@ for word in urlopen(WORD_URL).readlines():
 	WORDS.append(word.strip())
 
 def convert(snippet, phrase):
+	# return a list of random words for each %%% pattern in snippet string
+	# for each word in list capitalize word
+	# return resulting list 
 	class_names = [w.capitalize() for w in 
 					random.sample(WORDS, snippet.count("%%%"))]
 	other_names = random.sample(WORDS, snippet.count("***"))
