@@ -28,11 +28,19 @@ PHRASES_FIRST = False
 if len(sys.argv) == 2 and sys.argv[1] == "english":
 	PHRASES_FIRST = True
 
-# load up the words from the website
-for word in urlopen(WORD_URL).readlines():
-	WORDS.append(word.strip())
+## load up the words from the website
+#for word in urlopen(WORD_URL).readlines():
+#	WORDS.append(word.strip())
+## use a for loop and local cached copy of the word list
+#for word in open('words.txt', 'r'):
+#	WORDS.append(word.strip())
+# same thing except using list comprehension
+WORDS = [word.strip() for word in 
+			open('words.txt', 'r')]
+print WORDS
 
 def convert(snippet, phrase):
+	# List Comprehension
 	class_names = [w.capitalize() for w in 
 					random.sample(WORDS, snippet.count("%%%"))]
 	other_names = random.sample(WORDS, snippet.count("***"))
