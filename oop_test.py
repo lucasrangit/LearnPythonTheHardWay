@@ -37,7 +37,6 @@ if len(sys.argv) == 2 and sys.argv[1] == "english":
 # same thing except using list comprehension
 WORDS = [word.strip() for word in 
 			open('words.txt', 'r')]
-print WORDS
 
 def convert(snippet, phrase):
 	# List Comprehension
@@ -47,11 +46,17 @@ def convert(snippet, phrase):
 	results = []
 	param_names = []
 
+	# for each parameter placement
 	for i in range(0, snippet.count("@@@")):
+		# insert a 1-2 random words
 		param_count = random.randint(1,3)
+		# seperated by a comma
 		param_names.append(', '.join(random.sample(WORDS, param_count)))
 
 	for sentance in snippet, phrase:
+		# python list splicing to effectively create a shallow copy
+		# (a new list with a copy of the reference to the contained objects)
+		# list[start:step:end] is the general syntax
 		result = sentance[:]
 
 		# fake class names
