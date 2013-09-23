@@ -40,12 +40,14 @@ class LaserWeaponArmory(Scene):
 	def enter(self):
 		print "This is where the hero gets a neutron bomb to blow up the ship before getting to the escape pod. It has a keypad he has to guess the number for."
 		attempts = 0
+		number = randint(1,10)
+		print "number =", number
 		while True:
 			guess = int(raw_input('Guess a number: '))
-			if guess == randint(1,10):
+			if guess == number:
 				return 'the_bridge'
 			else:
-				attempts++
+				attempts += 1
 			if attempts == 3:
 				print "Too many attempts"
 				return 'death'
@@ -74,7 +76,7 @@ class Map(object):
 			return TheBridge()
 		elif scene_name == 'escape_pod':
 			return EscapePod()
-		else scene_name == 'death':
+		elif scene_name == 'death':
 			return Death()
 		else:
 			print "Unknown scene:", scene_name
