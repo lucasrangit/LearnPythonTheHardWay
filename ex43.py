@@ -1,4 +1,5 @@
 from sys import exit
+from random import randint
 
 class Scene(object):
 
@@ -38,8 +39,17 @@ class LaserWeaponArmory(Scene):
 
 	def enter(self):
 		print "This is where the hero gets a neutron bomb to blow up the ship before getting to the escape pod. It has a keypad he has to guess the number for."
-		return 'the_bridge'
-		
+		attempts = 0
+		while True:
+			guess = int(raw_input('Guess a number: '))
+			if guess == randint(1,10):
+				return 'the_bridge'
+			else:
+				attempts++
+			if attempts == 3:
+				print "Too many attempts"
+				return 'death'
+
 class TheBridge(Scene):
 
 	def enter(self):
@@ -64,8 +74,11 @@ class Map(object):
 			return TheBridge()
 		elif scene_name == 'escape_pod':
 			return EscapePod()
+		else scene_name == 'death':
+			return Death()
 		else:
 			print "Unknown scene:", scene_name
+			exit(1)
 
 	def opening_scene(self):
 		if self.start_scene == 'central_corridor':
