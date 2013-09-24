@@ -32,29 +32,36 @@ class Death(Scene):
 		exit(1)
 
 class CentralCorridor(Scene):
+	"This is the starting point and has a Gothon already standing there they have to defeat with a joke before continuing."
 
 	def enter(self):
-		print "This is the starting point and has a Gothon already standing there they have to defeat with a joke before continuing."
-		while True:
-			something = raw_input('Do what? ')
-			if something == "next":
-				return 'laser_weapon_armory'
+		print "A Gothon jumps out at you and is about to shoot. What do you do? [shoot!, dodge!, tell a joke]"
+		action = raw_input('> ')
+		if action == "shoot!":
+			return 'death'
+		elif action == "dodge!":
+			return 'death'
+		elif action == "tell a joke":
+			return 'laser_weapon_armory'
 
 class LaserWeaponArmory(Scene):
+	"This is where the hero gets a neutron bomb to blow up the ship before getting to the escape pod. It has a keypad he has to guess the number for."
 
 	def enter(self):
-		print "This is where the hero gets a neutron bomb to blow up the ship before getting to the escape pod. It has a keypad he has to guess the number for."
+		print "You find an armory but the laser weapons are kept in a safe with a 3 digit code."
 		attempts = 0
-		number = randint(1,10)
-		print "number =", number
+		code = "%%%" % (randint(1,9), randint(1,9), randint(1,9))
+		print "code = ", code
 		while True:
-			guess = int(raw_input('Guess a number: '))
-			if guess == number:
+			guess = raw_input('[keypad]> ')
+			if guess == code:
+				print "Correct!"
 				return 'the_bridge'
 			else:
+				print "Incorrect!"
 				attempts += 1
 			if attempts == 3:
-				print "Too many attempts"
+				print "Too many attempts!"
 				return 'death'
 
 class TheBridge(Scene):
