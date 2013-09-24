@@ -21,9 +21,14 @@ class Engine(object):
 			current_scene = self.scene_map.next_scene(next_scene_name)
 
 class Death(Scene):
+	
+	orbituaries = [
+		"The greatest programmer ever known has died today.",
+		"Our hero is dead. The Gothons have one."
+	]
 
 	def enter(self):
-		print "This is when the player dies and should be something funny."
+		print self.orbituaries[randint(0, len(self.orbituaries)-1)]
 		exit(1)
 
 class CentralCorridor(Scene):
@@ -70,7 +75,9 @@ class Map(object):
 		self.start_scene = start_scene
 
 	def next_scene(self, scene_name):
-		if scene_name == 'laser_weapon_armory':
+		if scene_name == 'central_corridor':
+			return CentralCorridor()
+		elif scene_name == 'laser_weapon_armory':
 			return LaserWeaponArmory()
 		elif scene_name == 'the_bridge':
 			return TheBridge()
@@ -83,8 +90,8 @@ class Map(object):
 			exit(1)
 
 	def opening_scene(self):
-		if self.start_scene == 'central_corridor':
-			return CentralCorridor()
+		# reuse the existing function to lookup scene
+		return self.next_scene(self.start_scene)
 
 a_map = Map('central_corridor')
 a_game = Engine(a_map)
