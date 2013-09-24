@@ -36,13 +36,16 @@ class CentralCorridor(Scene):
 
 	def enter(self):
 		print "A Gothon jumps out at you and is about to shoot. What do you do? [shoot!, dodge!, tell a joke]"
-		action = raw_input('> ')
-		if action == "shoot!":
-			return 'death'
-		elif action == "dodge!":
-			return 'death'
-		elif action == "tell a joke":
-			return 'laser_weapon_armory'
+		while True:
+			action = raw_input('> ')
+			if action == "shoot!":
+				print "You are still too slow because you haven't had coffee since you work up!"
+				return 'death'
+			elif action == "dodge!":
+				print "You are too slow in this gravity!"
+				return 'death'
+			elif action == "tell a joke":
+				return 'laser_weapon_armory'
 
 class LaserWeaponArmory(Scene):
 	"This is where the hero gets a neutron bomb to blow up the ship before getting to the escape pod. It has a keypad he has to guess the number for."
@@ -50,7 +53,7 @@ class LaserWeaponArmory(Scene):
 	def enter(self):
 		print "You find an armory but the laser weapons are kept in a safe with a 3 digit code."
 		attempts = 0
-		code = "%%%" % (randint(1,9), randint(1,9), randint(1,9))
+		code = "%d%d%d" % (randint(1,9), randint(1,9), randint(1,9))
 		print "code = ", code
 		while True:
 			guess = raw_input('[keypad]> ')
@@ -65,10 +68,22 @@ class LaserWeaponArmory(Scene):
 				return 'death'
 
 class TheBridge(Scene):
+	"Another battle scene with a Gothon where the hero places the bomb."	
 
 	def enter(self):
-		print "Another battle scene with a Gothon where the hero places the bomb."	
-		return 'escape_pod'
+		print "On the bridge are Gothons. What do you do with the bomb? [shoot, throw, place]"
+		action = raw_input('> ')
+		if action == "shoot":
+			print "The bomb goes off."
+			return 'death'
+		elif action == "throw":
+			print "You arm and throw the bomb and run but it goes off before you can reach the escape pod."
+			return 'death'
+		elif action == "place":
+			print "You hold a gun to the bomb while you slowly make for the escape pods. Before leaving the bridge to place the bomb on the door."
+			return 'escape_pod'
+		else:
+			return 'the_bridge'
 
 class EscapePod(Scene):
 
