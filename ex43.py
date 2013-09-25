@@ -93,23 +93,21 @@ class EscapePod(Scene):
 
 class Map(object):
 
+	scenes = {
+		'central_corridor' : CentralCorridor(),
+		'laser_weapon_armory' : LaserWeaponArmory(),
+		'the_bridge' : TheBridge(),
+		'escape_pod' : EscapePod(),
+		'death' : Death()
+	}
+
 	def __init__(self, start_scene):
 		self.start_scene = start_scene
 
 	def next_scene(self, scene_name):
-		if scene_name == 'central_corridor':
-			return CentralCorridor()
-		elif scene_name == 'laser_weapon_armory':
-			return LaserWeaponArmory()
-		elif scene_name == 'the_bridge':
-			return TheBridge()
-		elif scene_name == 'escape_pod':
-			return EscapePod()
-		elif scene_name == 'death':
-			return Death()
-		else:
-			print "Unknown scene:", scene_name
-			exit(1)
+        # return Map.scenes.get(scene_name)
+		# more consistent alternative
+		return self.scenes[scene_name]
 
 	def opening_scene(self):
 		# reuse the existing function to lookup scene
