@@ -1,5 +1,16 @@
 # Exercise 44: Inheritance vs. Composition
 
+class Other(object):
+
+	def override(self):
+		print "OTHER override()"
+
+	def implicit(self):
+		print "OTHER implicit()"
+
+	def altered(self):
+		print "OTHER altered()"
+
 class Parent(object):
 
 	def __init__(self):
@@ -21,10 +32,12 @@ class Child(Parent):
 	def __init__(self, stuff):
 		print "CHILD stuff:", stuff
 		super(Child, self).__init__()
+		self.other = Other()
 
 	def override(self):
 		"override the parent class method"
 		print "CHILD override()"
+		self.other.implicit()
 
 	def altered(self):
 		"override thbe parent class method and call it explicitly"
@@ -32,6 +45,9 @@ class Child(Parent):
 		# call super with arguments Child and self, then call the function altered on returned
 		super(Child, self).altered()
 		print "CHILD after PARENT altered()"
+		print "CHILD before OTHER altered()"
+		self.other.altered()
+		print "CHILD after OTHER altered()"
 
 dad = Parent()
 # Child does not inherit the __init__ from Parent
