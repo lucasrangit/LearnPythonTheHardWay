@@ -5,6 +5,7 @@ class Scene(object):
 
 	def enter(self):
 		print "This is the function executed when entering a new room. Subsclasses should override it."
+		print "Unless the player has ended the game, this function should return a string of the next scene to enter."
 		exit(1)
 
 class Engine(object):
@@ -39,7 +40,7 @@ class CentralCorridor(Scene):
 		while True:
 			action = raw_input('> ')
 			if action == "shoot!":
-				print "You are still too slow because you haven't had coffee since you work up!"
+				print "You are still too slow because you haven't had coffee since you work up from cryosleep!"
 				return 'death'
 			elif action == "dodge!":
 				print "You are too slow in this gravity!"
@@ -89,7 +90,19 @@ class EscapePod(Scene):
 
 	def enter(self):
 		print "Where the hero escapes but only after guessing the right escape pod."	
-		exit(0)
+		code = randint(1,9)
+		attempt = 0
+		print "The escape pod is protected by single digit (1-9) code with 3 attempts."
+		while attempt < 3:
+			guess = int(raw_input('> '))
+			if code == guess:
+				print "Our hero escapes to the planet below and the Gothan ship explodes."
+				exit(0)
+			else:
+				print "Code invalid! Try again."
+				attempt += 1
+		print "Too late, the bomb you placed on the bridge has detonated."
+		return 'death'
 
 class Map(object):
 
