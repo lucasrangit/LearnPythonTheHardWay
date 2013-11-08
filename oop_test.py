@@ -40,6 +40,9 @@ WORDS = [word.strip() for word in
 
 def convert(snippet, phrase):
 	# List Comprehension
+	# return a list of random words for each %%% pattern in snippet string
+	# for each word in list capitalize word
+	# return resulting list 
 	class_names = [w.capitalize() for w in 
 					random.sample(WORDS, snippet.count("%%%"))]
 	other_names = random.sample(WORDS, snippet.count("***"))
