@@ -40,10 +40,11 @@ class Child(Parent):
 		self.other.implicit()
 
 	def altered(self):
-		"override thbe parent class method and call it explicitly"
+		"override the parent class method and call it explicitly"
 		print "CHILD before PARENT altered()"
-		# call super with arguments Child and self, then call the function altered on returned
+		# call super with arguments Child and self
 		super(Child, self).altered()
+		# then call the function altered on returned
 		print "CHILD after PARENT altered()"
 		print "CHILD before OTHER altered()"
 		self.other.altered()
